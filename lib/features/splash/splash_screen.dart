@@ -1,3 +1,5 @@
+//! this is a demo splash screen, you can customize it as per your requirement
+
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
