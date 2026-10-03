@@ -8,17 +8,17 @@ import '../network/network_info.dart';
 import '../api/api_interceptors.dart';
 import '../config/app_config.dart';
 
-final sl = GetIt.instance;
+final getIt = GetIt.instance;
 
 /// Initialize Dependency Injection
 Future<void> init() async {
   //! Core
-  sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));
+  getIt.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(getIt()));
 
   //! External
-  sl.registerLazySingleton(() => InternetConnectionChecker.createInstance());
+  getIt.registerLazySingleton(() => InternetConnectionChecker.createInstance());
 
-  sl.registerLazySingleton(() {
+  getIt.registerLazySingleton(() {
     final dio = Dio(
       BaseOptions(
         baseUrl: AppConfig.baseUrl,
@@ -50,10 +50,10 @@ Future<void> init() async {
   /// Register API consumer.
   ///
   /// DioApiConsumer depends on the Dio instance registered above.
-  sl.registerLazySingleton<ApiConsumer>(() => DioApiConsumer(sl()));
+  getIt.registerLazySingleton<ApiConsumer>(() => DioApiConsumer(getIt()));
 
   // Register your dependencies here
   // Example:
-  // sl.registerFactory(() => LoginUseCase(sl()));
-  // sl.registerFactory(() => AuthRepository(sl()));
+  // getIt.registerFactory(() => LoginUseCase(getIt()));
+  // getIt.registerFactory(() => AuthRepository(getIt()));
 }
