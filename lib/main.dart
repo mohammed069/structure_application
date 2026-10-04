@@ -51,3 +51,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+//!this is the main entry point of the application. It initializes necessary services, sets up the app's theme and routing, and ensures that the app runs in portrait mode only. The `ScreenUtilInit` widget is used to adapt the UI to different screen sizes.

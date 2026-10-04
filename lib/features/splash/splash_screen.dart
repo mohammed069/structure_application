@@ -10,3 +10,5 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(body: Center(child: Text('splash_screen')));
   }
 }
+
+//! this is a demo splash screen, you can customize it as per your requirement
